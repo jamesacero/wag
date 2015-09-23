@@ -1,1 +1,1 @@
-# wag
+Wag is a web application that allows users to connect with other dog lovers and their pets in their area so that they may schedule social meet-ups and playdates. This app is my final student project for <a href="http://www.launchacademy.com">Launch Academy</a>, a 10-week, immersive web development bootcamp.
