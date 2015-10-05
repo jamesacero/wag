@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :dogs
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
@@ -8,7 +9,6 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
-  has_many :dogs, dependent: :destroy
 
   validates :first_name, presence: true
   validates :first_name, length: { maximum: 40 }
