@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150923042714) do
     t.integer  "age",        null: false
     t.string   "breed",      null: false
     t.string   "gender",     null: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

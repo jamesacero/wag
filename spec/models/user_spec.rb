@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 describe User do
-  it { should have_many(:dogs) }
+  describe "associations" do
+    it { should have_many(:dogs) }
+  end
 end
