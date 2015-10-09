@@ -1,10 +1,10 @@
 class Dog < ActiveRecord::Base
   belongs_to :user
+  has_many :playdates
 
   validates :name, presence: true
   validates :name, length: { maximum: 50 }
-  validates :age, presence: true
+  validates :age, presence: true, numericality: { only_integer: true }
   validates :breed, presence: true
   validates :gender, presence: true
-
 end

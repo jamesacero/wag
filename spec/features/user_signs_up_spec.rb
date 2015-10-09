@@ -20,12 +20,6 @@ feature 'User registers for an account', %Q{
     fill_in 'Email', with: 'random@example.com'
     fill_in 'Password', with: user.password
     fill_in 'Password confirmation', with: user.password
-    fill_in 'First name', with: user.first_name
-    fill_in 'Last name', with: user.last_name
-    fill_in 'Address', with: user.address
-    fill_in 'City', with: user.city
-    fill_in 'State', with: user.state
-    fill_in 'Zipcode', with: user.zipcode
     click_button 'Sign up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
