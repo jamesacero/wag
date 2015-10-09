@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
 
   resources :dogs
+  resources :profiles, only: [:index, :show, :edit, :update]
 end

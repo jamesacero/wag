@@ -4,7 +4,7 @@ class Dog < ActiveRecord::Base
 
   validates :name, presence: true
   validates :name, length: { maximum: 50 }
-  validates :age, presence: true, numericality: {only_integer: true}
+  validates :age, presence: true, numericality: { only_integer: true }
   validates :breed, presence: true
   validates :gender, presence: true
 end
