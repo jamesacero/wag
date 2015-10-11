@@ -1402,7 +1402,7 @@ $include-html-global-classes: $include-html-classes;
 // Background color for the top bar
 // $topbar-bg-color: $oil;
 // $topbar-bg: $topbar-bg-color;
-
+$topbar-bg: transparent;
 // Height and margin
 // $topbar-height: rem-calc(45);
 // $topbar-margin-bottom: 0;
@@ -1420,7 +1420,10 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
+$topbar-link-bg: transparent;
 // $topbar-link-bg-hover: $jet;
+$topbar-link-bg-hover: transparent;
+
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
