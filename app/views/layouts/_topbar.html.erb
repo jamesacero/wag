@@ -1,0 +1,26 @@
+<div class="full-width contain-to-grid fixed">
+  <div class="large 12-columns">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="<%= root_path %>">WAG</a><h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="left">
+        </ul>
+        <ul class="right">
+          <%- if current_user -%>
+            <li><%= link_to 'My Profile', profile_path(current_user) %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <%- else -%>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <%- end -%>
+        </ul>
+  <!-- search form here? -->
+      </section>
+    </nav>
+  </div>
+</div>

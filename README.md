@@ -1,5 +1,6 @@
 <h1>:dog: Wag :dog:</h1>
 
+<a href="https://codeclimate.com/github/jamesacero/wag"><img src="https://codeclimate.com/github/jamesacero/wag/badges/gpa.svg" /></a>
 <h2>Description</h2>
 *This personal student project will create a web app that will allow users to connect with other dog lovers and their pets in their area so that they can schedule social meet-ups. It will also be pulling information using the GoogleMaps API to find dog-friendly spaces, trails, and local dog parks for these playdates to be held.*
 
