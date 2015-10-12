@@ -1,6 +1,13 @@
-<h2>User Profile Page</h2>
-
-<%= form_for(:user) do |f| %>
+<h3>User Profile Page</h3>
+<div class="user-info">
+  <div>User Email: <%= current_user.email %></div>
+  <div>Name: <%= current_user.first_name %> <%= current_user.last_name %></div>
+  <div>Address:</div>
+  <div><%= current_user.address %></div>
+  <div><%= current_user.city %> <%= current_user.state %></div>
+  <div><%= current_user.zipcode %></div><br>
+</div>
+<%= form_for @user do |f| %>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true %>
@@ -32,6 +39,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Edit" %>
+    <%= f.submit "Save Changes" %>
   </div>
 <% end %>
