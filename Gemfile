@@ -47,6 +47,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'carrierwave'
+gem 'fog'
 gem 'coveralls', require: false
 gem 'rspec-rails', group: [:development, :test]
 gem 'capybara', group: [:development, :test]
