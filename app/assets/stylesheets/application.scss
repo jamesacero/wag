@@ -16,11 +16,14 @@
  */
  $navbargreen: #1b2b0d;
 
+ body {
+   padding-top: 60px;
+ }
+
  #body-home-page {
    background: url("dash.jpg") no-repeat center fixed;
    -moz-background-size: cover;
    -o-background-size: cover;
    -webkit-background-size: cover;
    background-size: cover;
-   padding-top: 60px;
  }
