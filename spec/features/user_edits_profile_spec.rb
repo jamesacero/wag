@@ -17,14 +17,13 @@ feature "user edits profile", %(
     expect(page).to have_content("Profile Page")
     expect(page).to have_content("Sign Out")
 
-    fill_in 'First name', with: 'Test'
-    fill_in 'Last name', with: 'Update'
-    fill_in 'Address', with: '10 Elm St'
-    fill_in 'City', with: 'Boston'
-    fill_in 'State', with: 'MA'
-    fill_in 'Zipcode', with: '00000'
+    fill_in "First name", with: "Test"
+    fill_in "Last name", with: "Update"
+    fill_in "Address", with: "10 Elm St"
+    fill_in "City", with: "Boston"
+    fill_in "State", with: "MA"
+    fill_in "Zipcode", with: "00000"
 
-    click_button 'Save Changes'
-
+    click_button "Save Changes"
   end
 end
