@@ -1,5 +1,6 @@
 <h3>User Profile Page</h3>
 <div class="user-info">
+  <div><%= image_tag(current_user.profile_photo) %></div>
   <div>User Email: <%= current_user.email %></div>
   <div>Name: <%= current_user.first_name %> <%= current_user.last_name %></div>
   <div>Address:</div>
@@ -36,6 +37,11 @@
   <div class="field">
     <%= f.label :zipcode %><br />
     <%= f.text_field :zipcode, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_photo, "Profile Photo" %><br />
+    <%= f.file_field :profile_photo %>
   </div>
 
   <div class="actions">
