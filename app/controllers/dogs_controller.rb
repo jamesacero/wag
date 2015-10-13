@@ -17,6 +17,17 @@ class DogsController < ApplicationController
     end
   end
 
+  def edit
+    dog = Dog.find(params[:id])
+    if signed_in? && current_user == dog.user
+      @dog = Dog.find(params[:id])
+    elsif !signed_in?
+      authenticate_user!
+    else
+      flash[:alert] = "You have no permission to edit this dog."
+    end
+  end
+
   def update
     @user = User.find(params[:id])
     @dog = Dog.find(params[:id])
