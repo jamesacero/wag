@@ -1,5 +1,11 @@
+@import "modules/mixins";
+
 .user-info {
   padding-bottom: 1em;
   padding-top: 0.5em;
   text-align: center;
+}
+
+img {
+  @include image-style;
 }
