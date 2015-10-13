@@ -9,25 +9,13 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     @dog.user = current_user
     if @dog.save
-      flash[:success] = 'New Dog Added!'
+      flash[:success] = "New Dog Added!"
       redirect_to profile_path(current_user)
     else
       flash[:errors] = @dog.errors.full_messages.join(". ")
       redirect_to profile_path(current_user)
     end
   end
-
-  def edit
-    dog = Dog.find(params[:id])
-    if signed_in? && current_user == dog.user
-      @dog = Dog.find(params[:id])
-    elsif !signed_in?
-      authenticate_user!
-    else
-      flash[:alert] = 'You have no permission to edit this dog.'
-    end
-  end
-
 
   def update
     @user = User.find(params[:id])

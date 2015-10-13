@@ -337,5 +337,5 @@ class Dog < ActiveRecord::Base
     "Yorkie Pom",
     "Yorkiepoo",
     "Yorkshire Terrier"
-    ]
+          ]
 end
