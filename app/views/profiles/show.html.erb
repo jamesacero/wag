@@ -14,7 +14,9 @@
 </div>
 
 <div class="dog-pen large-10 columns", id="user_dogs">
+<% unless current_user.dogs == [] %>
 <h4> Your Dogs </h4>
+<% end %>
   <div>
     <ul>
       <% current_user.dogs.each do |d| %>
@@ -23,10 +25,7 @@
       <p>Gender: <%= d.gender %></p>
       <p>Age: <%= d.age  %></p>
       <p>Breed: <%= d.breed  %></p>
-        <% if current_user %>
-          <%= link_to "Remove Dog", @dog, method: :delete,
-          data: {confirm: "Are you sure?"} %>
-        <% end %>
+      <%= link_to 'Remove Dog', user_dog_path(current_user, d), method: :delete, class: "button tiny round" %>
       </div>
       <% end %>
     </ul>

@@ -30,14 +30,6 @@ class UsersController < ApplicationController
     redirect_to profile_path(current_user)
   end
 
-  def destroy
-    @user = User.find(params[:id])
-    @dog = Dog.find(params[:id])
-    @dog.destroy
-    flash[:success] = "Dog removed from profile!"
-    redirect_to profile_path(current_user)
-  end
-
   private
 
   def user_params

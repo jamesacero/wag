@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
 
-
-  resources :users
+  resources :users, only: [:index, :show, :new, :create, :update]
 
   resources :users do
     resources :dogs
   end
 
-  resources :profiles, only: [:index, :new, :create, :show, :edit, :update]
+  resources :profiles
 end

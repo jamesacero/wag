@@ -17,6 +17,18 @@ class DogsController < ApplicationController
     end
   end
 
+  def edit
+    dog = Dog.find(params[:id])
+    if signed_in? && current_user == dog.user
+      @dog = Dog.find(params[:id])
+    elsif !signed_in?
+      authenticate_user!
+    else
+      flash[:alert] = 'You have no permission to edit this dog.'
+    end
+  end
+
+
   def update
     @user = User.find(params[:id])
     @dog = Dog.find(params[:id])
@@ -30,11 +42,11 @@ class DogsController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @dog = Dog.find(params[:id])
     @dog.destroy
     flash[:success] = "Dog removed from profile!"
+    redirect_to profile_path(current_user)
   end
 
   protected
