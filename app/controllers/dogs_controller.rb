@@ -5,9 +5,8 @@ class DogsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @dog = Dog.new(dog_params)
-    @dog.user = @user.id
     @dog.user = current_user
     if @dog.save
       flash[:success] = 'New Dog Added!'
@@ -31,17 +30,16 @@ class DogsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @user = User.find(params[:id])
     @dog = Dog.find(params[:id])
     @dog.destroy
     flash[:success] = "Dog removed from profile!"
-    redirect_to profile_path(current_user)
   end
 
   protected
 
   def dog_params
-    params.require(:dog).permit(:name, :age, :gender,
-                                :breed)
+    params.require(:dog).permit(:name, :gender, :age, :breed)
   end
 end
