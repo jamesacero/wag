@@ -8,6 +8,8 @@ class Dog < ActiveRecord::Base
   validates :breed, presence: true
   validates :gender, presence: true
 
+  mount_uploader :profile_photo, ProfilePhotoUploader
+
   BREED = [
     "Lovable Mutt",
     "Affenpinscher",
