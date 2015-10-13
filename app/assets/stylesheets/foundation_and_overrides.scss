@@ -465,6 +465,7 @@ $include-html-global-classes: $include-html-classes;
 // $button-border-width: 0;
 // $button-border-style: solid;
 // $button-bg-color: $primary-color;
+$button-bg-color: #238a30;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -987,6 +988,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control the background and border styles
 // $panel-bg: scale-color($white, $lightness: -5%);
+$panel-bg: scale-color(#a6ad9f, $lightness: -5%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 // $callout-panel-bg: scale-color($primary-color, $lightness: 94%);
@@ -997,6 +999,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to set default inner padding and bottom margin
 // $panel-margin-bottom: rem-calc(20);
 // $panel-padding: rem-calc(20);
+$panel-padding: rem-calc(40);
 
 // We use these to set default font colors
 // $panel-font-color: $oil;

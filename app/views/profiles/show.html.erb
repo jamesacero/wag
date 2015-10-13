@@ -1,14 +1,21 @@
-<h3>User Profile Page</h3>
-<div class="user-info">
-  <div><%= image_tag(current_user.profile_photo) %></div>
+
+<div class="large-6 columns"><%= image_tag(current_user.profile_photo) %></div>
+
+<div class="user-info large-4 columns">
+  <h2>User Profile Page</h2><br>
+  <h3>
   <div>User Email: <%= current_user.email %></div>
   <div>Name: <%= current_user.first_name %> <%= current_user.last_name %></div>
   <div>Address:</div>
   <div><%= current_user.address %></div>
   <div><%= current_user.city %> <%= current_user.state %></div>
-  <div><%= current_user.zipcode %></div><br>
+  <div><%= current_user.zipcode %></div>
+  </h3>
 </div>
-<%= form_for @user do |f| %>
+
+<div class="panel large-10 columns">
+  <h4>Edit Profile</h4>
+  <%= form_for @user do |f| %>
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true %>
@@ -45,6 +52,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Save Changes" %>
+    <%= f.submit "Save Changes", class: "button round" %>
   </div>
 <% end %>
+</div>
