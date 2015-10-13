@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :dogs
+
+  resources :users do
+    resources :dogs
+  end
+
   resources :profiles, only: [:index, :new, :create, :show, :edit, :update]
 end
