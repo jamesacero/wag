@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012222702) do
+ActiveRecord::Schema.define(version: 20151013210022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dogs", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.integer  "age",        null: false
-    t.string   "breed",      null: false
-    t.string   "gender",     null: false
+    t.string   "name",          null: false
+    t.integer  "age",           null: false
+    t.string   "breed",         null: false
+    t.string   "gender",        null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "profile_photo"
   end
 
   create_table "playdates", force: :cascade do |t|
@@ -33,18 +34,6 @@ ActiveRecord::Schema.define(version: 20151012222702) do
     t.time    "time"
     t.string  "location"
     t.string  "location_type"
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zipcode"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,6 +57,7 @@ ActiveRecord::Schema.define(version: 20151012222702) do
     t.string   "state"
     t.string   "zipcode"
     t.string   "profile_photo"
+    t.boolean  "dog"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

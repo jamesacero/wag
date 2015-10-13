@@ -9,3 +9,10 @@
 img {
   @include image-style;
 }
+
+.dog-image {
+  border-radius: 25px;
+  max-height: 500px;
+  max-width: 400px;
+  padding: 0;
+}
