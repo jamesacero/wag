@@ -1,6 +1,6 @@
 class PlaydatesController < ApplicationController
   helper PlaydateHelper
-  before_action :cube_authentication, only: [:create, :new]
+  before_action :authenticate_user!, only: [:create, :new]
   def index
     @playdates = Playdate.order(created_at: :desc).page(params[:page])
   end
@@ -17,7 +17,7 @@ class PlaydatesController < ApplicationController
   end
 
   def new
-    cube_authentication
+    authenticate_user!
     @playdate = Playdate.new
   end
 
@@ -35,7 +35,6 @@ class PlaydatesController < ApplicationController
   private
 
   def playdate_params
-    # change new to :playdate
     params.require(:new).permit(:title, :date, :user_id, :dog_id
                                 :time, :location, :location_type)
   end
