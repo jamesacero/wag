@@ -1,0 +1,47 @@
+$good_dog_font: "GoodDog";
+
+.body-home-page {
+  background: url("dash.jpg") no-repeat center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.new-bar {
+  padding: 0;
+}
+
+.bar {
+  max-width: 600px;
+}
+
+.search-button {
+  padding-left: 0;
+}
+
+.home-title {
+  -webkit-animation-duration: 1.7s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  position: absolute;
+  top: 30%;
+  left: 25%
+}
+
+.new_title {
+  color: white;
+  font-size: 9rem;
+  font-family: $good_dog_font;
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+li {
+  list-style-type: none;
+}
