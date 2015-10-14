@@ -8,5 +8,11 @@ Rails.application.routes.draw do
     resources :dogs
   end
 
+  resources :playdates, only: [:new, :create, :destroy]
+
+  resources :playdates, only: [:index, :show] do
+    resources :attendees, only: [:create, :show, :destroy]
+  end
+
   resources :profiles
 end
