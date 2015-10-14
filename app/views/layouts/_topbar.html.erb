@@ -3,14 +3,14 @@
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="<%= root_path %>">WAG</a><h1>
+          <h1><a href="<%= root_path %>" class="wag">WAG</a><h1>
         </li>
       </ul>
 
       <section class="top-bar-section">
         <ul class="left">
         </ul>
-        <ul class="right">
+        <ul class="right nav-bar-font">
           <%- if current_user -%>
             <li><%= link_to 'My Profile', profile_path(current_user) %></li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>

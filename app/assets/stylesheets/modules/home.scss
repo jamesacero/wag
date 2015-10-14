@@ -1,3 +1,5 @@
+$good_dog_font: "GoodDog";
+
 .body-home-page {
   background: url("dash.jpg") no-repeat center center fixed;
   -moz-background-size: cover;
@@ -19,17 +21,18 @@
 }
 
 .home-title {
-  -webkit-animation-duration: 1.8s;
+  -webkit-animation-duration: 1.7s;
   -webkit-animation-delay: 2s;
-  -webkit-animation-iteration-count: 2;
+  -webkit-animation-iteration-count: 1;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 25%
 }
 
 .new_title {
   color: white;
-  font-size: 5rem;
+  font-size: 9rem;
+  font-family: $good_dog_font;
 }
 
 .fullWidth {

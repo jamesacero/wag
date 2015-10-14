@@ -17,9 +17,19 @@
 @import "modules/profile";
 @import "modules/mixins";
 @import "modules/home";
+@import "modules/fonts";
 
 $navbargreen: #1b2b0d;
 
 body {
   padding-top: 60px;
+}
+
+.wag {
+  font-family: $good_dog_font;
+  font-size: 2.5rem;
+}
+
+.nav-bar-font {
+  font-family: "LeagueSpartan-Bold";;
 }
