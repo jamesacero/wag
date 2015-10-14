@@ -2,7 +2,7 @@ class PlaydatesController < ApplicationController
   helper PlaydateHelper
   before_action :authenticate_user!, only: [:create, :new]
   def index
-    @playdates = Playdate.order(created_at: :desc).page(params[:page])
+    @playdates = Playdate.order(created_at: :desc)
   end
 
   def show
@@ -35,7 +35,7 @@ class PlaydatesController < ApplicationController
   private
 
   def playdate_params
-    params.require(:new).permit(:title, :date, :user_id, :dog_id
+    params.require(:new).permit(:title, :date, :user_id, :dog_id,
                                 :time, :location, :location_type)
   end
 end

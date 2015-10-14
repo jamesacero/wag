@@ -1,5 +1,10 @@
 class AttendeesController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    @attendees = Attendee.order(created_at: :desc)
+  end
+
   def create
     @attendee = Attendee.new(user:current_user, meetup_id: params[:meetup_id])
     @attendee.save!

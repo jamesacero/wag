@@ -11,6 +11,14 @@
         <ul class="left">
         </ul>
         <ul class="right nav-bar-font">
+          <li class="has-dropdown">
+            <%= link_to 'My Playdates', playdates_path(current_user) %>
+            <ul class="dropdown">
+              <li><a href="#"><%= link_to 'Create a Playdate', new_playdate_path(current_user) %></li>
+              <li><a href="#"><%= link_to 'Join a Playdate', playdates_path(current_user) %></li>
+              <li><a href="#"><%= link_to 'Calendar', playdates_path(current_user) %></li>
+            </ul>
+          </li>
           <%- if current_user -%>
             <li><%= link_to 'My Profile', profile_path(current_user) %></li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
