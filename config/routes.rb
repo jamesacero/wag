@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :dogs
   end
 
-  resources :playdates, only: [:new, :create, :destroy, :index]
+  resources :playdates, only: [:new, :create, :show, :destroy, :index]
 
   resources :playdates, only: [:index, :show] do
     resources :attendees, only: [:create, :show, :destroy, :index]

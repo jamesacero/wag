@@ -18,13 +18,17 @@
     <% @playdates.each do |p| %>
     <div class="large-4 columns">
       <% if p.location_type == "Dog Park" %>
-        <img src="/dog-park-group.jpg"/>
+        <a href="<%= playdate_path(p) %>">
+          <img src="/dog-park-group.jpg"/></a>
       <% elsif p.location_type == "Residence" %>
-        <img src="/residence.jpg"/>
+        <a href="<%= playdate_path(p) %>">
+          <img src="/residence.jpg"/></a>
       <% elsif p.location_type == "Nature Hike" %>
-        <img src="/nature-hike.jpg"/>
+        <a href="<%= playdate_path(p) %>">
+          <img src="/nature-hike.jpg"/></a>
       <% else p.location_type == "Group Walk" %>
-        <img src="/group-walk.jpg"/>
+        <a href="<%= playdate_path(p) %>">
+          <img src="/group-walk.jpg"/></a>
       <% end %>
 
 
