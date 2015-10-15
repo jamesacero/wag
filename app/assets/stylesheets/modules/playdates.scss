@@ -1,6 +1,7 @@
 $paleolive: #788a6f;
 $lightmoss: #5b6a5a;
 $smoke: #eeeeee;
+$good_dog_font: "GoodDog";
 
 .playdates-bg {
   background: $paleolive;
@@ -9,6 +10,10 @@ $smoke: #eeeeee;
 .playdates-join {
   background: $lightmoss;
   padding: 15px;
+}
+
+.gooddog {
+  font-family: $good_dog_font
 }
 
 .playdates {
