@@ -5,18 +5,18 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   module PlaydateHelper
-     def resource_name
-       :user
-     end
+    def resource_name
+      :user
+    end
 
-     def resource
-       @resource ||= User.new
-     end
+    def resource
+      @resource ||= User.new
+    end
 
-     def devise_mapping
-       @devise_mapping ||= Devise.mappings[:user]
-     end
-   end
+    def devise_mapping
+      @devise_mapping ||= Devise.mappings[:user]
+    end
+  end
 
   protected
 
