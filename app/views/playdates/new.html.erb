@@ -1,1 +1,35 @@
-<h3>Create a Playdate</h3>
+<body class="create-playdates">
+<div class="create-bg">
+<div  id="window-styling" class="large-10 small-centered columns">
+  <div class="row">
+
+
+
+    <div class="preferences right large-6 small-7 large-uncentered small-centered columns">
+      <fieldset>
+        <legend><h3>Create a Playdate</h3></legend>
+          <%= form_for @playdate do |f| %>
+              <%= f.label :date %>
+              <%= f.date_field :date, autofocus: true %>
+
+              <%= f.label :time %>
+              <%= f.time_field :time, autocomplete: "off" %>
+
+              <%= f.label :location_address %>
+              <%= f.text_field :location, autocomplete: "off" %>
+
+              <%= f.label :location_type %>
+              <%= f.select :location_type,
+              Playdate::LOCATIONTYPE, class: "button dropdown" %>
+
+              <%= f.submit "Save Changes", class: "button round", id: "save_button" %>
+              <% end %>
+      </fieldset>
+    <div>
+
+
+  </div>
+</div>
+
+</div>
+</body>
