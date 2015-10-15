@@ -1,7 +1,17 @@
 @mixin image-style {
   border-radius: 30em;
+  height: 21em;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5em;
+}
+
+@mixin user-image-style {
+  border-radius: 30em;
   height: auto;
-  width: 20em;
+  width: 17em;
   display: block;
   margin-left: auto;
   margin-right: auto;
