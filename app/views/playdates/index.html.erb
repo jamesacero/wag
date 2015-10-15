@@ -7,33 +7,7 @@
   <div class="small-10 text-center small-centered columns">
       <h1>Join a Playdate</h1>
 
-        <div class="small-5 columns text-center" data-equalizer>
-        <p>Date: <%= playdate.date %> </p>
-        <p>Hosted by: <%= playdate.user.email %> </p>
-        <p>At: <%= playdate.time %> </p>
-        <div>
-        <% if playdate.user == current_user %>
-          <%= button_to "Delete playdate", playdate_path(playdate), method: :delete %>
-        <% else %>
-          <% if Attendee.find_by(playdate_id:playdate.id, user_id:current_user).nil? %>
-            <%=button_to "Join playdate!", playdate_attendees_path(playdate), method: :post %>
-          <% else %>
-          <%= button_to "Leave playdate", playdate_attendee_path(playdate.id, playdate), method: :delete %>
-          <% end %>
-        <% end %>
 
-      </div>
-    </div>
-
-    <div class="small-6 columns text-center" data-equalizer>
-      <%= playdate.description %>
-      <hr>
-      <span>People attending this Playdate:</span><br>
-      <ul>
-        <% playdate.attendees.each do |attendee| %>
-          <li><%= attendee.user.email %></li>
-        <% end %>
-    </div>
 
   </div>
 </body>
