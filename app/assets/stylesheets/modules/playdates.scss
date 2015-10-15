@@ -1,11 +1,18 @@
 $paleolive: #788a6f;
+$lightmoss: #5b6a5a;
+$smoke: #eeeeee;
 
-.create-playdates {
+.playdates-bg {
   background: $paleolive;
 }
 
+.playdates-join {
+  background: $lightmoss;
+  padding: 15px;
+}
+
 .playdates {
-  background: url("/abel.jpg") no-repeat center center fixed;
+  background: url("/abel-bg.jpg"), no-repeat center center fixed;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -41,4 +48,8 @@ $paleolive: #788a6f;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 2px;
+}
+
+.white {
+  color: $smoke;
 }
