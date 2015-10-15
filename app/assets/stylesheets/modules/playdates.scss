@@ -1,0 +1,44 @@
+$paleolive: #788a6f;
+
+.create-playdates {
+  background: $paleolive;
+}
+
+.playdates {
+  background: url("abel.jpg") no-repeat center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.create-bg {
+  background: url("poof.jpg") no-repeat center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.window-styling {
+  padding-top: 2px;
+}
+
+.preferences {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 2px;
+  padding-bottom: 10px;
+}
+
+.quote-box {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.new-shelter-image {
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 2px;
+}

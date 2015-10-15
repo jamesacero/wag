@@ -6,6 +6,7 @@ $good_dog_font: "GoodDog";
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
+  opacity: 0.95;
 }
 
 .new-bar {
@@ -26,13 +27,13 @@ $good_dog_font: "GoodDog";
   -webkit-animation-iteration-count: 1;
   position: absolute;
   top: 30%;
-  left: 25%
+  left: 28%;
 }
 
 .new_title {
   color: white;
-  font-size: 9rem;
   font-family: $good_dog_font;
+  font-size: 11rem;
 }
 
 .fullWidth {
