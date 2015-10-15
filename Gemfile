@@ -49,6 +49,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'faker'
 gem 'carrierwave'
 gem 'fog'
 gem 'coveralls', require: false
