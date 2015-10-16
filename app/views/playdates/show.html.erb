@@ -1,1 +1,24 @@
-Show Playdate
+
+<div class="playdate-box row large-10 small-12 small-centered columns">
+  <div class="left">
+    <div class="small-centered columns">
+
+  <div class="right" id="playdate-info">
+    <p>
+    <h2 class="window-styling">Playdate at <%= @playdate.location %></h2>
+    <h6 class="title">Location Type: <%= @playdate.location_type %></h6>
+    <h6 class="title">Date: <%= @playdate.date %></h6>
+    <h6 class="title">Time: <%= @playdate.time.getlocal %></h6>
+    </p>
+    <% if current_user == @playdate..user %>
+      <%= link_to "Edit", edit_playdate_path(@playdate), class: "button-blue button tiny round" %>
+      <%= link_to 'Remove', @playdate, method: :delete, class: "button-blue button tiny round" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="join-button">
+</div>
+
+<div class="leave-button">
+</div>
