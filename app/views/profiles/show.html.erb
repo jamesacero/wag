@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="large 12 columns">
+<body class="body-profile-page">
+  <div class="row hidden">
 
-      <div class="small-8 large-6 columns">
-        <h3 class="show-for-small text-center">User Profile Page<hr/></h3>
-        <div class="panel">
+    <div class="small-12 medium-5 columns">
+      <h3 class="show-for-small small-profile-text text-center">User Profile Page<hr/></h3>
+      <div class="panel">
           <p class="user-img"><%= image_tag(current_user.profile_photo) %><br></p>
           <h4 class="hide-for-small text-center">User Profile Page<hr/></h4>
             <h5 class="user-info subheader">
@@ -15,125 +15,131 @@
               <%= current_user.city %> <%= current_user.state %>
               <%= current_user.zipcode %>
             </h5>
-        </div>
       </div>
+    </div>
 
-      <div class="profile-pic large-6 columns">
+    <div class="profile-pic small-12 medium-7 columns">
           <% unless current_user.dogs == [] %>
-            <div class="panel dog-pen large-8 columns" id="user_dogs">
-              <h3 class="show-for-small text-center">Your Dogs<hr/></h3>
-              <h4 class="hide-for-small text-center">Your Dogs<hr/></h4>
+      <div class="row panel">
+        <div id="user_dogs">
+            <h3 class="show-for-small text-center">Your Dogs<hr/></h3>
+            <h4 class="hide-for-small text-center">Your Dogs<hr/></h4>
           <% end %>
-        <div class="row large-12 text-center columns">
-              <p><% current_user.dogs.each do |d| %>
-                <h5>Name: <%= d.name %><br><br></h5>
-                Gender: <%= d.gender %><br>
-                Age: <%= d.age  %><br>
-                Breed: <%= d.breed  %><br><br>
-                <%= link_to 'Remove Dog', user_dog_path(current_user, d),
-                  method: :delete, class: "button tiny round" %>
-                </p>
-                <div class="profile-pic medium-12 large-12"><%= image_tag(d.profile_photo) %>
-              <% end %>
-                <br>
-            </div>
+        </div>
+
+        <p><% current_user.dogs.each do |d| %>
+        <div class="row">
+          <div class="small-6 columns">
+            <img class="profile-pic">
+              <%= image_tag(d.profile_photo) %>
+            </img>
+          </div>
+
+          <p class:"small-6 columns dog-info">
+          <br>
+            Name: <%= d.name %><br><br>
+            Gender: <%= d.gender %><br>
+            Age: <%= d.age  %><br>
+            Breed: <%= d.breed  %><br><br>
+            <%= link_to 'Remove Dog', user_dog_path(current_user, d),
+              method: :delete, class: "button tiny round" %>
+            <% end %>
+          </p>
+          </div>
         </div>
       </div>
-
-
-      </h3>
-    </ul>
-  </div>
-</div>
-
-</legend>
-
-
-
-<div class="panel large-10 columns">
-  <h4>Edit Profile</h4>
-  <%= form_for @user do |f| %>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :zipcode %><br />
-    <%= f.text_field :zipcode, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :profile_photo, "Profile Photo" %><br />
-    <%= f.file_field :profile_photo %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Save Changes", class: "button round", id: "save_button" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dog, "Would you like to add a dog to your profile?" %>
-    <%= f.select :dog, [["No", false],["Yes", true]], selected: false %>
-  </div>
-
-<% end %>
-
-  <div id="dog_info" style="display: none;">
-    <h4>Please enter your dog's information below!</h4>
-
-      <%= form_for [@user, Dog.new] do |f| %>
-
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, placeholder: "Enter your dog's name here!" %>
+  <div class="row panel">
+    <h4>Edit Profile</h4>
+      <%= form_for @user do |f| %>
+    <div class="field medium-6 columns">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true %>
     </div>
 
-    <div class="field">
-      <%= f.label :gender %>
-      <%= f.select :gender, [["Male"], ["Female"]] %>
+    <div class="field medium-6 columns">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autocomplete: "off" %>
     </div>
 
-    <div class="field">
-      <%= f.label :age %>
-      <%= f.text_field :age, placeholder: "About how old is your dog?" %>
+    <div class="field medium-6 columns">
+      <%= f.label :address %><br />
+      <%= f.text_field :address, autocomplete: "off" %>
     </div>
 
-    <div class="field">
-      <%= f.label :breed %>
-      <%= f.select :breed,
-          Dog::BREED, class: "button dropdown", html_options: size=30 %>
+    <div class="field medium-3 columns">
+      <%= f.label :city %><br />
+      <%= f.text_field :city, autocomplete: "off" %>
     </div>
 
-    <div class="field">
-      <%= f.label :profile_photo, "Your Dog's Photo" %>
+    <div class="field medium-1 columns">
+      <%= f.label :state %><br />
+      <%= f.text_field :state, autocomplete: "off" %>
+    </div>
+
+    <div class="field medium-2 columns">
+      <%= f.label :zipcode %><br />
+      <%= f.text_field :zipcode, autocomplete: "off" %>
+    </div>
+
+    <div class="field medium-12 columns">
+      <%= f.label :profile_photo, "Profile Photo" %><br />
       <%= f.file_field :profile_photo %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Add Your Dog!", class: "button round" %>
+      <%= f.submit "Save Changes", class: "button round", id: "save_button" %>
     </div>
+
+    <div class="field text-center row">
+      <p><%= f.label :dog, "Would you like to add a dog to your profile?", class: "question"%>
+      <%= f.select :dog, [["No", false],["Yes", true]], selected: false %>
     <% end %>
 
-  </div>
-</div>
+
+    <div id="dog_details" style="display: none;">
+      <h4>Please enter your dog's information below!</h4>
+
+        <%= form_for [@user, Dog.new] do |f| %>
+    <div class="row">
+      <div class="field medium-8 medium-centered columns">
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Enter your dog's name here!" %>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="field medium-3 columns">
+        <%= f.label :age %>
+        <%= f.text_field :age, placeholder: "About how old is your dog?" %>
+      </div>
+
+      <div class="field medium-5 columns">
+        <%= f.label :gender %>
+        <%= f.select :gender, [["Male"], ["Female"]] %>
+      </div>
+
+      <div class="field medium-4 columns">
+        <%= f.label :breed %>
+        <%= f.select :breed,
+            Dog::BREED, class: "button dropdown", html_options: size=30 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :profile_photo, "Your Dog's Photo" %>
+        <%= f.file_field :profile_photo, class: "text-center round upload" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Add Your Dog!", class: "button round" %>
+      </div>
+      <% end %>
+
+      </div>
+      </div>
+    </div>
+
+</body>
