@@ -1,23 +1,33 @@
-<div class="playdate-box row large-12 small-12 small-centered columns">
-  <div class="left">
-    <div class="small-centered columns">
+<body class="playdate-page container">
+  <div class= "row" id="playdate-info">
 
-  <div class="right" id="playdate-info">
-    <p>
-    <h2 class="window-styling">Playdate at <%= @playdate.location %></h2>
-    <h6 class="title">Location Type: <%= @playdate.location_type %></h6>
-    <h6 class="title">Date: <%= @playdate.date %></h6>
-    <h6 class="title">Time: <%= @playdate.time.getlocal %></h6>
-    </p>
-    <% if current_user == @playdate..user %>
-      <%= link_to "Edit", edit_playdate_path(@playdate), class: "button-blue button tiny round" %>
-      <%= link_to 'Remove', @playdate, method: :delete, class: "button-blue button tiny round" %>
-    <% end %>
-  </div>
-</div>
-</div>
+    <div class="medium-6 panel columns">
 
-  <div id="map">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0kjjuZvHjhBTuGoz0YXLpvecu6xBxBCA&libraries=places&callback=initialize"></script>
-  </div>
+      <div class="medium-6 columns">
+        <p>
+        <h3 class="window-styling">Location:</h3>
+        <h6 class="title">Location Type:</h6>
+        <h6 class="title">Date:</h6>
+        <h6 class="title">Time:</h6>
+        </p>
+        <% if current_user == @playdate..user %>
+          <%= link_to "Edit", edit_playdate_path(@playdate), class: "button-blue button tiny round" %>
+          <%= link_to 'Remove', @playdate, method: :delete, class: "button-blue button tiny round" %>
+        <% end %>
+      </div>
+
+      <div class="medium-6 columns">
+        <p>
+        <h3 class="window-styling"><%= @playdate.location %></h3>
+        <h6 class="title"><%= @playdate.location_type %></h6>
+        <h6 class="title"><%= @playdate.date %></h6>
+        <h6 class="title"><%= @playdate.time.strftime("%I:%M%p") %></h6>
+        </p>
+      </div>
+    </div>
+
+    <div class="medium-5 medium-offset-1 columns" id="map">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0kjjuZvHjhBTuGoz0YXLpvecu6xBxBCA&libraries=places&callback=initialize"></script>
+    </div>
+</body>

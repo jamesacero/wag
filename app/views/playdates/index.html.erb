@@ -5,10 +5,10 @@
 
 <div class="row">
   <div class="large-12 columns">
-  <div id="slider" centered>
-    <img src="/abel-banner.jpg"/>
-  </div>
-  <hr/>
+    <div id="slider" centered>
+      <img src="/abel-banner.jpg"/>
+    </div>
+    <hr/>
   </div>
 </div>
 
@@ -30,11 +30,10 @@
           <img src="/group-walk.jpg"/></a>
       <% end %>
 
-
       <h4 class="white text-center"><%= p.location %></h4>
       <h5 class="white text-center"><%= p.location_type %></h5>
       <p class="white title text-center">Playdate: <%= p.date %>
-          Time: <%= p.time.getlocal %></p>
+          Time: <%= p.time.strftime("%I:%M%p") %></p>
     </div>
     <% end %>
   </div>
