@@ -3,10 +3,10 @@
     });
 function toggleFields() {
     if ($("#user_dog").val() == "true") {
-      $("#dog_info").show();
+      $("#dog_details").show();
       $("#save_button").hide();
     } else {
-      $("#dog_info").hide();
+      $("#dog_details").hide();
       $("#save_button").show();
     }
 }

@@ -14,5 +14,9 @@ Rails.application.routes.draw do
     resources :attendees, only: [:create, :show, :destroy, :index]
   end
 
+  resources :dogparks, only: [:index, :show]
+  
   resources :profiles
+
+
 end

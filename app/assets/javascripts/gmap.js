@@ -1,6 +1,6 @@
 function initialize() {
   var mapOptions = {
-      center: new google.maps.LatLng(42.361108, -71.0537779),
+      center: new google.maps.LatLng(42.382931, -71.098577),
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -9,7 +9,7 @@ function initialize() {
 
   //Setting a marker
   var markerOptions = {
-     position: new google.maps.LatLng(42.361108, -71.0537779)
+     position: new google.maps.LatLng(42.382931, -71.098577)
   };
   var marker = new google.maps.Marker(markerOptions);
   marker.setMap(map);

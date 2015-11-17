@@ -1,0 +1,22 @@
+<head>
+  <meta charset="utf-8">
+  <title>Boston Dog Parks</title>
+</head>
+
+<body class="dogparks-bg">
+  <div class="row">
+  <div class="large-12 columns">
+    <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4">
+
+      <% @dogparks.each do |d| %>
+          <li>
+          <a href="<%= dogpark_path(d) %>">
+          <img src="/group-walk.jpg"/></a>
+          <h4 class="white text-center"><%= d.name %></h4>
+          </li>
+      <% end %>
+    </ul>
+
+    </div>
+  </div>
+</body>

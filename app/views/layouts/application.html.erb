@@ -9,7 +9,7 @@
 <body>
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
+    <div class="alert-box radius flash-<%= key %>">
       <%= value %>
     </div>
   <%- end -%>
@@ -19,5 +19,17 @@
 
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
+
+  <script>
+      $(document).ready(function() {
+        setTimeout(function(){
+          $(".alert-box").fadeOut("slow", function() {
+            $(this).remove();
+          })
+        }, 1600);
+      $(".parent2").trigger("mousedown");
+      });
+  </script>
+
 </body>
 </html>

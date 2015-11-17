@@ -1,0 +1,28 @@
+<body class="dogpark-page container">
+  <div class= "row" id="dogpark-info">
+
+    <div class="medium-7 text-center medium-centered panel columns">
+
+      <h3 class="window-styling"><%= @dogpark.name %></h3>
+      <div class="medium-centered columns">
+        <p>
+        Address:<br>
+        <%= @dogpark.address %><br>
+        <%= @dogpark.city %>, <%= @dogpark.state %>
+        </p>
+      </div>
+    </div>
+
+</body>
+
+<div align="right" class="large-5 small-12 large-uncentered small-centered columns" id="gmap">
+  <iframe
+   width="375"
+   height="400"
+   frameborder="0" style="border:0"
+   src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_KEY'] %>
+    &q=<%= @dogpark.address %>,<%= @dogpark.city %>,<%= @dogpark.state %>
+    &attribution_source=Google+Maps+Embed+API
+    &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @dogpark.address %>, <%= @dogpark.city %>, <%= @dogpark.state %>">
+  </iframe>
+</div>
