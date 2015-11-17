@@ -1,11 +1,6 @@
 <body class="dogpark-page container">
   <div class= "row" id="dogpark-info">
 
-    <div class="medium-6 medium-centered columns" id="map">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0kjjuZvHjhBTuGoz0YXLpvecu6xBxBCA&libraries=places&callback=initialize"></script>
-    </div>
-
     <div class="medium-7 text-center medium-centered panel columns">
 
       <h3 class="window-styling"><%= @dogpark.name %></h3>
@@ -19,3 +14,15 @@
     </div>
 
 </body>
+
+<div align="right" class="large-5 small-12 large-uncentered small-centered columns" id="gmap">
+  <iframe
+   width="375"
+   height="400"
+   frameborder="0" style="border:0"
+   src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_KEY'] %>
+    &q=<%= @dogpark.address %>,<%= @dogpark.city %>,<%= @dogpark.state %>
+    &attribution_source=Google+Maps+Embed+API
+    &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @dogpark.address %>, <%= @dogpark.city %>, <%= @dogpark.state %>">
+  </iframe>
+</div>
