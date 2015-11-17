@@ -1,0 +1,21 @@
+<body class="dogpark-page container">
+  <div class= "row" id="dogpark-info">
+
+    <div class="medium-6 medium-centered columns" id="map">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0kjjuZvHjhBTuGoz0YXLpvecu6xBxBCA&libraries=places&callback=initialize"></script>
+    </div>
+
+    <div class="medium-7 text-center medium-centered panel columns">
+
+      <h3 class="window-styling"><%= @dogpark.name %></h3>
+      <div class="medium-centered columns">
+        <p>
+        Address:<br>
+        <%= @dogpark.address %><br>
+        <%= @dogpark.city %>, <%= @dogpark.state %>
+        </p>
+      </div>
+    </div>
+
+</body>

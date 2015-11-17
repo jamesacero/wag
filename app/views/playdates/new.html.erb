@@ -6,7 +6,7 @@
           <h3>Create a Playdate</h3>
             <%= form_for @playdate do |f| %>
                 <%= f.label :date %>
-                <%= f.date_field :date, autofocus: true %>
+                <%= f.date_select :date, autofocus: true %>
 
                 <%= f.label :time %>
                 <%= f.time_field :time, autocomplete: "off" %>

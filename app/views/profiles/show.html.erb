@@ -42,7 +42,7 @@
             Age: <%= d.age  %><br>
             Breed: <%= d.breed  %><br><br>
             <%= link_to 'Remove Dog', user_dog_path(current_user, d),
-              method: :delete, class: "button tiny round" %>
+              method: :delete,  data: { confirm: 'Are you sure?' }, class: "button tiny round" %>
             <% end %>
           </p>
           </div>
