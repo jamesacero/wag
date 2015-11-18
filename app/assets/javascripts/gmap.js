@@ -5,7 +5,7 @@ function initialize() {
       mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions); markerFromDB;
 
   //Setting a marker
   var markerOptions = {
