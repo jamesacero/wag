@@ -4,7 +4,7 @@
     <div class="small-12 medium-5 columns">
       <h3 class="show-for-small small-profile-text text-center">User Profile Page<hr/></h3>
       <div class="panel">
-        <% if current_user.profile_photo%>
+        <% if image_tag(current_user.profile_photo) == "<img src=\"\" />" %>
           <img src="/no-profile-pic.jpg"/><br><br>
         <% else %>
           <p class="user-img"><%= image_tag(current_user.profile_photo) %><br></p>

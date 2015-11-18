@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :dogs, allow_destroy: "true"
 
   mount_uploader :profile_photo, ProfilePhotoUploader
+  
 
   devise :database_authenticatable,
          :registerable,
