@@ -13,10 +13,10 @@
           <li class="has-dropdown not-click">
             <%= link_to 'Playdates' %>
             <ul class="dropdown">
-              <li><%= link_to 'Discover Dog Parks', dogparks_path(current_user) %></li>
-              <li><%= link_to 'Find a Playdate', playdates_path(current_user) %></li>
+              <li><%= link_to 'Discover Dog Parks', dogparks_path %></li>
+              <li><%= link_to 'Find a Playdate', playdates_path %></li>
               <%- if current_user -%>
-              <li><%= link_to 'Create a New Playdate', new_playdate_path(current_user) %></li>
+              <li><%= link_to 'Create a New Playdate', new_playdate_path %></li>
               <%- end -%>
             </ul>
           </li>
