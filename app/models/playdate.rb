@@ -4,8 +4,8 @@ class Playdate < ActiveRecord::Base
   has_many :attendees
 
   LOCATIONTYPE = [
-    "Dog Park",
     "Residence",
+    "Dog Park",
     "Nature Hike",
     "Group Walk"
   ]

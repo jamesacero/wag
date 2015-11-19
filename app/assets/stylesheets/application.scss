@@ -21,6 +21,7 @@
 @import "modules/playdates";
 @import "modules/show_playdates";
 
+
 $navbargreen: #1b2b0d;
 
 body {
@@ -59,4 +60,13 @@ body {
 
 .signup {
   background-color: #bfddc1;
+}
+
+.body-dogpark-page {
+  background: url("/barkpark.jpg") no-repeat center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  opacity: 0.95;
 }

@@ -1,28 +1,29 @@
-<body class="dogpark-page container">
+<body class="body-dogpark-page container">
+  <p id="lat" hidden><%= @dogpark.lat %></p>
+  <p id="lon" hidden><%= @dogpark.lng %></p>
   <div class= "row" id="dogpark-info">
 
-    <div class="medium-7 text-center medium-centered panel columns">
+    <div class="medium-6 columns" id="map">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_KEY'] %>&q=<%= @dogpark.address %>,<%= @dogpark.city %>,<%= @dogpark.state %>&attribution_source=Google+Maps+Embed+API&attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @dogpark.address %>, <%= @dogpark.city %>, <%= @dogpark.state %>"></script>
+    </div>
 
-      <h3 class="window-styling"><%= @dogpark.name %></h3>
+
+    <div class="small-11 medium-5 medium-offset-1 text-center panel columns">
+
+      <h3 class="window-styling"><%= @dogpark.name %></h3><br>
       <div class="medium-centered columns">
         <p>
-        Address:<br>
+        <h5>Address:</h5>
         <%= @dogpark.address %><br>
         <%= @dogpark.city %>, <%= @dogpark.state %>
+        </p>
+        <p id="schedule-button">
+          <%= link_to "Schedule a Playdate",
+            new_playdate_path(@playdate),
+            class: "button round" %>
         </p>
       </div>
     </div>
 
 </body>
-
-<div align="right" class="large-5 small-12 large-uncentered small-centered columns" id="gmap">
-  <iframe
-   width="375"
-   height="400"
-   frameborder="0" style="border:0"
-   src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_KEY'] %>
-    &q=<%= @dogpark.address %>,<%= @dogpark.city %>,<%= @dogpark.state %>
-    &attribution_source=Google+Maps+Embed+API
-    &attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @dogpark.address %>, <%= @dogpark.city %>, <%= @dogpark.state %>">
-  </iframe>
-</div>
