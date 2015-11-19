@@ -10,10 +10,10 @@
       <section class="top-bar-section">
         <a href="<%= root_path %>"><img class="logo-navbar" src="/smallwagwhitelogo.png" alt="" /></img></a>
         <ul class="right nav-bar-font">
+            <li><%= link_to 'Discover Dog Parks', dogparks_path %></li>
           <li class="has-dropdown not-click">
             <%= link_to 'Playdates' %>
             <ul class="dropdown">
-              <li><%= link_to 'Discover Dog Parks', dogparks_path %></li>
               <li><%= link_to 'Find a Playdate', playdates_path %></li>
               <%- if current_user -%>
               <li><%= link_to 'Create a New Playdate', new_playdate_path %></li>

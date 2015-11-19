@@ -4,22 +4,7 @@
       <div class="preferences right large-6 small-7 large-uncentered small-centered columns">
         <fieldset>
           <h3>Create a Playdate</h3>
-            <%= form_for @playdate do |f| %>
-                <%= f.label :date %>
-                <%= f.date_select :date, autofocus: true %>
-
-                <%= f.label :time %>
-                <%= f.time_field :time, autocomplete: "off" %>
-
-                <%= f.label :meeting_location_type %>
-                <%= f.select :location_type,
-                Playdate::LOCATIONTYPE, class: "button dropdown" %>
-                
-                <%= f.label :location_address %>
-                <%= f.text_field :location, autocomplete: "off" %>
-
-                <%= f.submit "Save Changes", class: "button round", id: "save_button" %>
-                <% end %>
+          <%= render "layouts/newplaydate" %>
         </fieldset>
       <div>
     </div>

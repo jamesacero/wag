@@ -5,8 +5,8 @@ class Playdate < ActiveRecord::Base
 
   LOCATIONTYPE = [
     "Residence",
-    "Dog Park",
     "Nature Hike",
-    "Group Walk"
+    "Group Walk",
+    "Dog Park"
   ]
 end

@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :dogparks, only: [:index, :show]
-  
-  resources :profiles
 
+  resources :profiles
 
 end

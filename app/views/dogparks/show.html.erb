@@ -19,9 +19,27 @@
         <%= @dogpark.city %>, <%= @dogpark.state %>
         </p>
         <p id="schedule-button">
-          <%= link_to "Schedule a Playdate",
-            new_playdate_path(@playdate),
-            class: "button round" %>
+            <input class= "button" type='button' id='hideshow' value="Schedule a Playdate Here!">
+
+            <div id='playdate-form' style='display:none'>
+            <%= form_for [@playdate] do |f| %>
+                <%= f.label :date %>
+                <%= f.date_select :date, autofocus: true %>
+
+                <%= f.label :time %>
+                <%= f.time_field :time, value: "", autocomplete: "off" %>
+
+                <%= f.label :location_type %>
+                <%= f.select :location_type,
+                Playdate::LOCATIONTYPE, selected: "Dog Park", class: "button dropdown" %>
+
+                <%= f.label :location_address %>
+                <%= f.text_field :location, value: @dogpark.address, autocomplete: "off" %>
+
+                <%= f.submit "Save Changes", class: "button round", id: "save_button" %>
+                <% end %>
+            </div>
+
         </p>
       </div>
     </div>

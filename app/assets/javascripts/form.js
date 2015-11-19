@@ -10,3 +10,9 @@ function toggleFields() {
       $("#save_button").show();
     }
 }
+
+jQuery(document).ready(function(){
+        jQuery('#hideshow').on('click', function(event) {
+             jQuery('#playdate-form').toggle('show');
+        });
+    });
