@@ -43,7 +43,12 @@
         <% @dogparks.each do |d| %>
             <li>
             <a href="<%= dogpark_path(d) %>">
-            <img src="/group-walk.jpg"/></a>
+              <% if image_tag(d.park_picture) == "<img src=\"\" />" %>
+                <img class= "dogpark-img" src="/group-walk.jpg"/></a>
+              <% else %>
+                <img class= "dogpark-img"><%= image_tag(d.park_picture) %></a>
+              <% end %>
+
             <h4 class="white text-center"><%= d.name %></h4>
             </li>
         <% end %>
