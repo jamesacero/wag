@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'homes#index'
   devise_for :users
 
@@ -14,8 +15,8 @@ Rails.application.routes.draw do
     resources :attendees, only: [:create, :show, :destroy, :index]
   end
 
-  resources :dogparks, only: [:index, :show]
-
+  resources :dogparks, only: [:index, :show, :create]
+  
   resources :profiles
 
 end

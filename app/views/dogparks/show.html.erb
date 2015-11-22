@@ -22,7 +22,7 @@
             <input class= "button" type='button' id='hideshow' value="Schedule a Playdate Here!">
 
             <div id='playdate-form' style='display:none'>
-            <%= form_for [@playdate] do |f| %>
+            <%= form_for @playdate do |f| %>
                 <%= f.label :date %>
                 <%= f.date_select :date, autofocus: true %>
 
