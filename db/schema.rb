@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118154731) do
+ActiveRecord::Schema.define(version: 20151122180424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attendees", force: :cascade do |t|
-    t.integer  "meetup_id",  null: false
-    t.integer  "user_id",    null: false
+    t.integer  "playdate_id", null: false
+    t.integer  "user_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
