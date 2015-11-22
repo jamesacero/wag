@@ -15,5 +15,4 @@ class Playdate < ActiveRecord::Base
   def create_attendee
     Attendee.create(playdate: self, user: self.user)
   end
-
 end

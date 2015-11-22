@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'homes#index'
   devise_for :users
 
@@ -16,7 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :dogparks, only: [:index, :show, :create]
-  
-  resources :profiles
 
+  resources :profiles
 end

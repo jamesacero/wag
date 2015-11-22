@@ -1,5 +1,4 @@
 class DogparksController < ApplicationController
-
   def index
     @dogparks = Dogpark.all
   end
@@ -19,5 +18,4 @@ class DogparksController < ApplicationController
       redirect_to playdates_path
     end
   end
-
 end

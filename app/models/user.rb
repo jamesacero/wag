@@ -19,5 +19,4 @@ class User < ActiveRecord::Base
          :rememberable,
          :trackable,
          :validatable
-
 end
