@@ -10,7 +10,13 @@
     Playdate::LOCATIONTYPE, class: "button dropdown" %>
 
     <%= f.label :location_address %>
-    <%= f.text_field :location, autocomplete: "off" %>
+    <%= f.text_field :address, autocomplete: "off" %>
+
+    <%= f.label :city %>
+    <%= f.text_field :city, autocomplete: "off" %>
+
+    <%= f.label :state %>
+    <%= f.text_field :state, autocomplete: "off" %>
 
     <%= f.submit "Save Changes", class: "button round", id: "save_button" %>
     <% end %>

@@ -1,28 +1,33 @@
 <body class="playdate-page container">
+  <p id="lat" hidden><%= @playdate.lat %></p>
+  <p id="lon" hidden><%= @playdate.lng %></p>
   <div class= "row" id="playdate-info">
 
     <div class="medium-6 medium-centered columns" id="map">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_KEY'] %>&libraries=places&callback=initialize"></script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_KEY'] %>&q=<%= @playdate.address %>,<%= @playdate.city %>,<%= @playdate.state %>&attribution_source=Google+Maps+Embed+API&attribution_ios_deep_link_id=comgooglemaps://?daddr=<%= @playdate.address %>, <%= @playdate.city %>, <%= @playdate.state %>"></script>
     </div>
 
     <div class="medium-6 medium-centered hide-for-small columns">
 
       <div class="row panel medium-centered columns">
-          <h3>@ <%= @playdate.location %></h3>
+          <h3>@ <%= @playdate.address %></h3>
         <div class="medium-6 hide-for-small columns">
           <p>
           <h6>Location Type:</h6>
           <h6>Time:</h6>
           <h6>Date:</h6>
+          <h6>Address:</h6>
           </p>
         </div>
 
         <div class="medium-6 hide-for-small columns">
           <p>
           <h6 class="title"><%= @playdate.location_type %></h6>
-          <h6 class="title"><%= @playdate.time %></h6>
+          <h6 class="title"><%= @playdate.time.strftime("%I:%M%p") %></h6>
           <h6 class="title"><%= @playdate.date %></h6>
+          <h6 class="title"><%= @playdate.address %></h6>
+          <h6 class="title"><%= @playdate.city %>, <%= @playdate.state %></h6>
           </p>
         </div>
         <div class="playdate-buttons">
@@ -59,12 +64,15 @@
 
     <div class="medium-6 medium-centered show-for-small panel columns">
 
-      <h3 class="window-styling">@ <%= @playdate.location %></h3>
+      <h3 class="window-styling">@ <%= @playdate.address %></h3>
       <div class="medium-centered columns">
         <p>
         Location Type: <%= @playdate.location_type %><br>
-        Time: <%= @playdate.time %><br>
-        Date:<%= @playdate.date %>
+        Time: <%= @playdate.time.strftime("%I:%M%p") %><br>
+        Date: <%= @playdate.date %><br>
+        Address:<br>
+        <%= @playdate.address %></br>
+        <%= @playdate.city %>, <%= @playdate.state %></br>
         </p>
         <div class="playdate-buttons">
           <% if @playdate.user == current_user %>
@@ -83,7 +91,7 @@
           <% end %>
         </div>
       </div>
-      
+
       <h6 class="title">
         <% if @playdate.attendees.empty? %>
           Nobody's attending this meetup yet!

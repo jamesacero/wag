@@ -334,64 +334,99 @@ User.create(
   zipcode: Faker::Address.zip_code)
 
 Playdate.create(
+  lat: 42.334549,
+  lng: -71.112742,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(4, :evening),
-  location: Faker::Address.street_name,
+  address: "575 Brookline Ave",
+  city: "Brookline",
+  state: "MA",
   location_type: "Dog Park")
 
 Playdate.create(
+  lat: 42.389402,
+  lng: -71.103434,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(5, :evening),
-  location: Faker::Address.street_address,
+  address: "10 Hudson St",
+  city: "Somerville",
+  state: "MA",
   location_type: "Residence")
 
 Playdate.create(
+  lat: 42.381467,
+  lng: -71.093219,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(8, :evening),
-  location: Faker::Address.street_address,
+  address: "Prospect Hill Park",
+  city: "Somerville",
+  state: "MA",
   location_type: "Group Walk")
 
 Playdate.create(
+  lat: 42.334549,
+  lng: -71.112742,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(10, :evening),
-  location: Faker::Address.street_name,
-  location_type: "Nature Hike")
+  address: "695 Hillside St",
+  city: "Milton",
+  state: "MA",  location_type: "Nature Hike")
 
 Playdate.create(
+  lat: 42.387140,
+  lng: -71.093739,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(9, :evening),
-  location: Faker::Address.street_name,
+  address: "Skilton Ave",
+  city: "Somerville",
+  state: "MA",
   location_type: "Dog Park")
 
 Playdate.create(
+  lat: 42.389634,
+  lng: -71.137988,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(8, :evening),
-  location: Faker::Address.street_address,
-  location_type: "Group Walk")
+  address: "99 Sherman St",
+  city: "Cambridge",
+  state: "MA",
+  location_type: "Dog Park")
 
 Playdate.create(
+  lat: 42.152155,
+  lng: -70.890146,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(5, :evening),
-  location: Faker::Address.street_address,
+  address: "37 Deerfield Lane",
+  city: "Hanover",
+  state: "MA",
   location_type: "Residence")
 
 Playdate.create(
+  lat: 42.351816,
+  lng: -71.207252,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(10, :evening),
-  location: Faker::Address.street_name,
+  address: "260 Walnut Street",
+  city: "Newton",
+  state: "MA",
   location_type: "Group Walk")
 
 Playdate.create(
+  lat: 42.381468,
+  lng: -71.145350,
   user_id: rand(1..5),
   date: Faker::Date.forward(23),
   time: Faker::Time.forward(10, :evening),
-  location: Faker::Address.street_name,
+  address: "200 Fresh Pond Pkwy",
+  city: "Cambridge",
+  state: "MA",
   location_type: "Group Walk")

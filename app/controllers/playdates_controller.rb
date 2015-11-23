@@ -36,6 +36,6 @@ class PlaydatesController < ApplicationController
 
   def playdate_params
     params.require(:playdate).permit(:date, :time,
-                                     :location, :location_type)
+                                     :address, :city, :state, :location_type)
   end
 end
