@@ -1,7 +1,6 @@
 class DogparksController < ApplicationController
-
   def index
-      @dogparks = Dogpark.order(name: :asc)
+    @dogparks = Dogpark.order(name: :asc)
   end
 
   def show
