@@ -1,6 +1,6 @@
 class DogparksController < ApplicationController
   def index
-    @dogparks = Dogpark.all
+    @dogparks = Dogpark.order(name: :asc)
   end
 
   def show
@@ -17,5 +17,10 @@ class DogparksController < ApplicationController
       flash[:errors] = @playdate.errors.full_messages.join(". ")
       redirect_to playdates_path
     end
+  end
+
+  def new
+    authenticate_user!
+    @playdate = Playdate.new
   end
 end
