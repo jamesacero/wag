@@ -22,7 +22,7 @@
             <input class= "button" type='button' id='hideshow' value="Schedule a Playdate Here!">
 
             <div id='playdate-form' style='display:none'>
-            <%= form_for @playdate do |f| %>
+            <%= form_for @playdate, url: playdates_path do |f| %>
               <%= f.label :date %>
               <%= f.date_select :date, autofocus: true, required: true %>
 
@@ -34,8 +34,16 @@
               Playdate::LOCATIONTYPE, selected: "Dog Park", class: "button dropdown" %>
 
               <%= f.label :location_address %>
-              <%= f.text_field :location, value: @dogpark.address, autocomplete: "off", required: true %>
+              <%= f.text_field :address, value: @dogpark.address, autocomplete: "off", required: true %>
 
+              <div class="medium-6 columns">
+              <%= f.label :city %>
+              <%= f.text_field :city, value: @dogpark.city, autocomplete: "off", required: true %>
+              </div>
+              <div class="medium-6 columns">
+              <%= f.label :state %>
+              <%= f.text_field :state, value: @dogpark.state, autocomplete: "off", required: true %>
+              </div>
               <%= f.submit "Save Changes", class: "button round", id: "save_button" %>
               <% end %>
             </div>
@@ -43,5 +51,5 @@
         </p>
       </div>
     </div>
-
+  </div>
 </body>
