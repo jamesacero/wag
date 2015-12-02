@@ -9,6 +9,7 @@ class DogparksController < ApplicationController
   end
 
   def create
+    authenticate_user!
     @playdate = Playdate.new(playdate_params)
     @playdate.user = current_user
     if @playdate.save
@@ -22,5 +23,12 @@ class DogparksController < ApplicationController
   def new
     authenticate_user!
     @playdate = Playdate.new
+  end
+
+  private
+
+  def playdate_params
+    params.require(:playdate).permit(:date, :time,
+                                     :address, :city, :state, :location_type)
   end
 end
