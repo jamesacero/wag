@@ -6,6 +6,8 @@
 <h2>Description</h2>
 *This personal student project is a web app that allows users to connect with other dog lovers and their pets in their area so that they can schedule social meet-ups. It uses the GoogleMaps API to display dog-friendly spaces, trails, and local dog parks for these playdates to be held.*
 
+Sample deployment @ http://wagwag.herokuapp.com/
+
 <h2>User Stories</h2>
 **Primary User Stories:**
 * As a dog owner, I want to create a profile page for myself and my dog so that other users can find and connect with me.
